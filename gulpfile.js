@@ -1,13 +1,17 @@
 const browserify = require('gulp-browserify');
 const cssimport = require('postcss-import');
 const cssmqpacker = require('css-mqpacker');
+const cssnano = require('gulp-cssnano');
 const cssnext = require('postcss-cssnext');
 const data = require('gulp-data');
 const gulp = require('gulp');
 const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
 const pug = require('gulp-pug');
+
 const { basename, join, relative } = require('path');
+
+const { version } = require('./package.json');
 
 const paths = {
   pages: join(__dirname, 'src/pages'),
@@ -18,7 +22,7 @@ const paths = {
 const pageLocals = {
   cdn: '/blobs',
   env: process.env.NODE_ENV || 'development',
-  version: Math.random(),
+  version: version,
 };
 
 gulp.task('pages', () =>
@@ -33,10 +37,7 @@ gulp.task('pages', () =>
 gulp.task('scripts', () =>
   gulp
     .src(join(paths.scripts, 'main.js'))
-    .pipe(browserify({
-      insertGlobals: true,
-      debug: process.env.NODE_ENV !== 'production',
-    }))
+    .pipe(browserify())
     .pipe(gulp.dest('./assets/scripts'))
 );
 
@@ -49,6 +50,16 @@ gulp.task('styles', () =>
       cssmqpacker({ sort: true }),
     ]))
     .pipe(gulp.dest('./assets/styles'))
+    .pipe(cssnano())
+    .pipe(rename('main.min.css'))
+    .pipe(gulp.dest('./assets/styles'))
 );
 
+gulp.task('watch', () => {
+  gulp.watch(join(paths.scripts, '**/*.js'), ['scripts']);
+  gulp.watch(join(paths.styles, '**/*.css'), ['styles']);
+});
+
 gulp.task('default', ['pages', 'scripts', 'styles']);
+
+gulp.task('dev', ['default', 'watch']);
