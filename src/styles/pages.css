@@ -16,7 +16,6 @@
       height: 100%;
       background-size: cover;
       background-position: center center;
-      transition: all 0.2s ease;
       z-index: 1;
     }
 
@@ -39,11 +38,6 @@
       background-image: url('../images/home-niveissaiyajin.jpg');
     }
 
-    & a:hover {
-      z-index: 2;
-      transform: scale(1.05);
-    }
-
     & h1 {
       position: absolute;
       bottom: 0;
@@ -52,6 +46,12 @@
       padding: var(--spacing-sm);
       color: var(--white);
       background-color: var(--black-80);
+      transition: all 0.2s ease;
+    }
+
+    & a:hover h1 {
+      color: var(--black);
+      background-color: var(--green);
     }
 
     @media (--viewport-sm-only) {

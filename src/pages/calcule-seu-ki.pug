@@ -1,4 +1,4 @@
-extends ../../templates/content
+extends ../templates/content
 
 block append meta
   - self.title = 'Calcule seu Ki!'
@@ -8,7 +8,7 @@ block inner-content
   p Aqui você pode descobrir a sua força interior somente preenchendo o formulário abaixo. A calculadora de ki é exclusiva da Mundo DBZ, ela obtém o seu Ki levando em consideração todos os dados abaixo e efetuando cálculos específicos para cada intervalo de valores inserido. Divirta-se!
   if self.ki
     h2.text-center: strong Seu ki calculado é #{self.ki}
-  form(action='/interativo/calcule-seu-ki.html', method='post').home-search.grid.grid-middle.grid-padded
+  form(action='/calcule-seu-ki.html', method='post').home-search.grid.grid-middle.grid-padded
     .width-3-7.text-right
       label(for='idade') Tenho
     .width-1-7

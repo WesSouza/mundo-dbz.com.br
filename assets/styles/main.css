@@ -336,6 +336,10 @@ body .align-middle {
   background-color: var(--dark-orange);
 }
 
+.main-content {
+  min-height: 60vh;
+}
+
 .wrapper {
   width: 100%;
   margin-left: auto;
@@ -502,7 +506,6 @@ body .align-middle {
   height: 100%;
   background-size: cover;
   background-position: center center;
-  transition: all 0.2s ease;
   z-index: 1;
 }
 
@@ -530,11 +533,6 @@ body .align-middle {
   background-image: url('../images/home-niveissaiyajin.jpg');
 }
 
-.home-tiles .tile a:hover {
-  z-index: 2;
-  transform: scale(1.05);
-}
-
 .home-tiles .tile h1 {
   position: absolute;
   bottom: 0;
@@ -543,6 +541,12 @@ body .align-middle {
   padding: var(--spacing-sm);
   color: var(--white);
   background-color: var(--black-80);
+  transition: all 0.2s ease;
+}
+
+.home-tiles .tile a:hover h1 {
+  color: var(--black);
+  background-color: var(--green);
 }
 
 @media (min-width: 768px) {
