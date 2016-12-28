@@ -70,3 +70,27 @@
     }
   }
 }
+
+.characters {
+  display: flex;
+  flex-direction: column;
+}
+
+.character {
+  display: flex;
+  align-items: flex-start;
+  margin-top: var(--spacing-sm);
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--lighter-gray);
+  }
+}
+
+.character-image {
+  flex-grow: 0;
+}
+
+.character-description {
+  margin-bottom: var(--spacing-sm);
+  flex-grow: 1;
+}

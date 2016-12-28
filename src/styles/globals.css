@@ -134,6 +134,33 @@ body .align-middle {
   vertical-align: middle;
 }
 
+.anchor {
+  display: block;
+  margin-top: calc(0px - var(--nav-height-lg));
+  margin-bottom: var(--nav-height-lg);
+}
+
+.anchor-letter-index {
+  position: fixed;
+  top: 0;
+  right: 6px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (--viewport-md) {
+    right: 20px;
+  }
+
+  & a {
+    display: block;
+    padding: 3px;
+    color: var(--darker-gray);
+    text-decoration: none;
+  }
+}
+
 .icon {
   width: 16px;
 }

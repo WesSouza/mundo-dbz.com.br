@@ -155,6 +155,29 @@ body .align-middle {
   vertical-align: middle;
 }
 
+.anchor {
+  display: block;
+  margin-top: calc(0px - var(--nav-height-lg));
+  margin-bottom: var(--nav-height-lg);
+}
+
+.anchor-letter-index {
+  position: fixed;
+  top: 0;
+  right: 6px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.anchor-letter-index a {
+  display: block;
+  padding: 3px;
+  color: var(--darker-gray);
+  text-decoration: none;
+}
+
 .icon {
   width: 16px;
 }
@@ -549,6 +572,30 @@ body .align-middle {
   background-color: var(--green);
 }
 
+.characters {
+  display: flex;
+  flex-direction: column;
+}
+
+.character {
+  display: flex;
+  align-items: flex-start;
+  margin-top: var(--spacing-sm)
+}
+
+.character:not(:last-child) {
+  border-bottom: 1px solid var(--lighter-gray);
+}
+
+.character-image {
+  flex-grow: 0;
+}
+
+.character-description {
+  margin-bottom: var(--spacing-sm);
+  flex-grow: 1;
+}
+
 @media (min-width: 768px) {
 
   body .text-left-md {
@@ -561,6 +608,10 @@ body .align-middle {
 
   body .text-right-md {
     text-align: right;
+  }
+
+  .anchor-letter-index {
+    right: 20px;
   }
 
   .width-md-1-1 {

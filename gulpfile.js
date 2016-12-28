@@ -56,6 +56,7 @@ gulp.task('styles', () =>
 );
 
 gulp.task('watch', () => {
+  gulp.watch(join(paths.pages, '**/*.pug'), ['pages']);
   gulp.watch(join(paths.scripts, '**/*.js'), ['scripts']);
   gulp.watch(join(paths.styles, '**/*.css'), ['styles']);
 });
