@@ -1,0 +1,5 @@
+@custom-media --viewport-sm-only (width < 768px);
+@custom-media --viewport-md (width >= 768px);
+@custom-media --viewport-md-only (width >= 768px) and (width < 1280px);
+@custom-media --viewport-sm-md-only (width < 1280px);
+@custom-media --viewport-lg (width >= 1280px);

@@ -1,0 +1,151 @@
+* {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 0.625em;
+  box-sizing: border-box;
+}
+
+body [hidden] {
+  display: none;
+}
+
+html,
+body {
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
+
+body {
+  padding-top: calc(var(--nav-height-lg) + var(--spacing-sm));
+  font-weight: var(--normal);
+  background-color: var(--lighter-gray);
+
+  @media (--viewport-sm-only) {
+    font-size: var(--size-sm);
+    padding-top: calc(var(--nav-height-sm) + var(--spacing-sm));
+  }
+}
+
+body,
+a {
+  color: var(--black);
+}
+
+strong,
+b {
+  font-weight: var(--bold);
+}
+
+hr {
+  background-color: var(--gray);
+  height: 1px;
+  width: 100%;
+  border-width: 0;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.clear {
+  clear: both;
+}
+
+body .pull-left {
+  float: left;
+}
+
+body .pull-right {
+  float: right;
+}
+
+body .image-left {
+  float: left;
+  margin: 0 var(--spacing-sm) var(--spacing-sm) 0;
+}
+
+body .image-right {
+  float: right;
+  margin: 0 0 var(--spacing-sm) var(--spacing-sm);
+}
+
+@media (--viewport-sm-only) {
+  body .image-right,
+  body .image-left {
+    display: block;
+    float: none;
+    margin: 0 auto var(--spacing-sm) auto;
+  }
+}
+
+body .text-left {
+  text-align: left;
+}
+
+body .text-center {
+  text-align: center;
+}
+
+@media (--viewport-md) {
+  body .text-left-md {
+    text-align: left;
+  }
+
+  body .text-center-md {
+    text-align: center;
+  }
+
+  body .text-right-md {
+    text-align: right;
+  }
+}
+
+@media (--viewport-lg) {
+  body .text-left-lg {
+    text-align: left;
+  }
+
+  body .text-center-lg {
+    text-align: center;
+  }
+
+  body .text-right-lg {
+    text-align: right;
+  }
+}
+
+body .text-right {
+  text-align: right;
+}
+
+body .align-middle {
+  vertical-align: middle;
+}
+
+.icon {
+  width: 16px;
+}
+
+.padding {
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+
+  @media (--viewport-sm-only) {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+  }
+}

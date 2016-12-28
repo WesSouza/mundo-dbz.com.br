@@ -1,0 +1,191 @@
+.main-nav {
+  position: fixed;
+  z-index: 10;
+  top: 0; left: 0;
+  width: 100%;
+  line-height: 60px;
+  background-color: var(--black);
+  font-size: 1.4rem;
+  font-weight: var(--bold);
+  letter-spacing: 0.2rem;
+  outline: 1px solid var(--white-20);
+
+  &, & a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white);
+    fill: var(--white);
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & h1 {
+    margin: 0 40px 0 -90px;
+    font-family: 'Gruppo', sans-serif;
+    font-size: 3.8rem;
+    letter-spacing: calc(0 - 0.3rem);
+    text-transform: none;
+    background: url(../images/goku.png) no-repeat;
+    background-size: 230px 100px;
+    background-position: 0 60%;
+
+    & a:hover {
+      text-decoration: none;
+    }
+
+    & .mz {
+      color: var(--green);
+    }
+  }
+
+  @media (--viewport-md) {
+    text-transform: uppercase;
+
+    @nest body.-has-transitions-enabled & {
+      transition: all 0.5s ease;
+    }
+
+    & h1 a {
+      padding-left: 230px;
+      padding-right: 20px;
+    }
+
+    & .nav-right {
+      text-align: right;
+    }
+
+    @nest .-has-scroll-on-top & {
+      line-height: 100px;
+    }
+
+    & li {
+      margin-left: 40px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @media (--viewport-md-only) {
+    letter-spacing: 0.1rem;
+
+    & h1 {
+      margin-right: 10px;
+    }
+
+    & li {
+      margin-left: 15px;
+    }
+  }
+
+  @media (--viewport-sm-only) {
+    line-height: 44px;
+    letter-spacing: 0.1rem;
+
+    & .wrapper {
+      padding: 0;
+    }
+
+    & h1 {
+      margin: 0;
+      padding: 0 0 0 10px;
+      font-size: 3.0rem;
+      background: none;
+    }
+
+    & ul {
+      font-size: 1.4rem;
+    }
+
+    & .nav-dropdown {
+      padding: 0 10px;
+    }
+
+    & .nav-dropdown:hover {
+      text-decoration: none;
+    }
+
+    & .nav-ul-menu {
+      position: absolute;
+      top: 44px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: none;
+      line-height: 20px;
+      clear: both;
+      background: var(--white);
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+
+      & a,
+      & h2 {
+        display: block;
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: var(--normal);
+        padding: 1.2rem 0;
+      }
+
+      & h2 {
+        padding-top: 2.4rem;
+        padding-bottom: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: var(--bold);
+        text-transform: uppercase;
+      }
+
+      & li {
+        border-top: 1px solid var(--light-gray);
+        font-weight: var(--normal);
+        margin-left: 1.8rem;
+
+        &:first-of-type {
+          border-top: 0;
+        }
+      }
+
+      & .nav-ul-category {
+        margin-left: 0;
+        padding-left: 1.8rem;
+        background-color: var(--lighter-gray);
+        border: 1px solid var(--light-gray);
+        border-width: 1px 0;
+      }
+
+      & .nav-ul-category + li {
+        border-top: 0;
+      }
+
+      & li,
+      & a {
+        color: var(--black);
+      }
+    }
+
+    @nest html.-has-nav-open & {
+      width: 100%;
+      height: 100%;
+
+      & .nav-dropdown-open {
+        display: none;
+      }
+
+      & .nav-dropdown-close,
+      & .list-stacked {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (--viewport-sm-only) {
+  html.-has-nav-open,
+  html.-has-nav-open body {
+    overflow: hidden;
+    height: 100%;
+  }
+}

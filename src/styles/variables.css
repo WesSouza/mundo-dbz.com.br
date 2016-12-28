@@ -1,0 +1,56 @@
+:root {
+  /* Breakpoints */
+  --break-medium: 768px;
+  --break-large: 1280px;
+
+  /* Font weights */
+  --normal: 300;
+  --bold: 700;
+
+  /* Font sizes */
+  --size-default: 1.6rem;
+  --size-sm: 1.6rem;
+
+  /* Colors */
+  --darker-green: #598400;
+  --dark-green: #739818;
+  --green: #99CC00;
+  --light-green: #AEE620;
+  --lighter-green: #BCE65E;
+
+  --darker-teal: #00574D;
+  --dark-teal: #13645C;
+  --teal: #008577;
+  --light-teal: #24C3B3;
+  --lighter-teal: #52C2B7;
+
+  --darker-orange: #8C3B00;
+  --dark-orange: #A25B20;
+  --orange: #D85B00;
+  --light-orange: #ED852F;
+  --lighter-orange: #EDA065;
+
+  --darker-pink: #6F0043;
+  --dark-pink: #801D5A;
+  --pink: #AB0066;
+  --light-pink: #D62E96;
+  --lighter-pink: #D65CA7;
+
+  --black: #000;
+  --black-80: rgba(0, 0, 0, 0.8);
+  --darkest-gray: #424252;
+  --darker-gray: #646474;
+  --dark-gray: #868696;
+  --gray: #A8A8B8;
+  --light-gray: #CACADB;
+  --lighter-gray: #DBDBEB;
+  --white: #FFF;
+  --white-20: rgba(255, 255, 255, 0.2);
+
+  /* Common sizes */
+  --spacing-lg: 40px;
+  --spacing-sm: 20px;
+  --nav-height-lg: 100px;
+  --nav-height-sm: 44px;
+  --border-radius: 4px;
+}

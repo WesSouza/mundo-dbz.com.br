@@ -1,0 +1,24 @@
+.main-footer {
+  background-color: var(--dark-green);
+  color: var(--white);
+  margin-bottom: 0;
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+
+  & h1 {
+    font-size: 1.8rem;
+    margin: 0 0 calc(var(--spacing-sm) / 4) 0;
+  }
+
+  & ul {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  & a {
+    color: var(--white);
+  }
+
+  & .copyright {
+    text-align: center;
+  }
+}

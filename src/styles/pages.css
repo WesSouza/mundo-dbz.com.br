@@ -1,0 +1,72 @@
+.home-search {
+  & input,
+  & button {
+    width: 100%;
+  }
+}
+
+.home-tiles {
+  & .tile {
+    height: 150px;
+
+    & a {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      transition: all 0.2s ease;
+      z-index: 1;
+    }
+
+    & .home-galeria {
+      background-image: url('../images/home-galeria.jpg');
+    }
+    & .home-personagens {
+      background-image: url('../images/home-personagens.jpg');
+    }
+    & .home-calculeki {
+      background-image: url('../images/home-calculeki.jpg');
+    }
+    & .home-jogos {
+      background-image: url('../images/home-jogos.jpg');
+    }
+    & .home-entrevistaakira {
+      background-image: url('../images/home-entrevistaakira.jpg');
+    }
+    & .home-niveissaiyajin {
+      background-image: url('../images/home-niveissaiyajin.jpg');
+    }
+
+    & a:hover {
+      z-index: 2;
+      transform: scale(1.05);
+    }
+
+    & h1 {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      width: auto;
+      padding: var(--spacing-sm);
+      color: var(--white);
+      background-color: var(--black-80);
+    }
+
+    @media (--viewport-sm-only) {
+      & h1 {
+        padding: calc(var(--spacing-sm) / 2);
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (--viewport-md-only) {
+      height: 250px;
+    }
+
+    @media (--viewport-lg) {
+      height: 280px;
+    }
+  }
+}

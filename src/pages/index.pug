@@ -1,0 +1,18 @@
+extends ../templates/default
+
+block meta
+  - self.description = 'Portal sobre o anime Dragon Ball com mais de 5 mil imagens do desenho, centenas de informações sobre personagens, jogos gratuitos em flash, emuladores e roms e muito mais.';
+
+block content
+  section.content
+    .wrapper
+      include ../templates/partial-search
+  section.content
+    .wrapper
+      section.grid.grid-padded.home-tiles
+        .width-1-1.width-lg-2-3: article.tile: a.home-galeria(href='/imagens/'): h1 Galeria de Imagens
+        .width-1-1.width-lg-1-3: article.tile: a.home-personagens(href='/personagens/'): h1 Todos os Personagens
+        .width-1-1.width-md-1-2.width-lg-1-3: article.tile: a.home-jogos(href='/jogos/'): h1 Jogos
+        .width-1-1.width-md-1-2.width-lg-2-3: article.tile: a.home-calculeki(href='/interativo/calcule-seu-ki.html'): h1 Calcule seu Ki
+        .width-1-1.width-md-1-2: article.tile: a.home-entrevistaakira(href='/conteudo/entrevista-akira-toriyama.html'): h1 Entrevista com Akira Toriyama
+        .width-1-1.width-md-1-2: article.tile: a.home-niveissaiyajin(href='/conteudo/niveis-saiyajin.html'): h1 Níveis Saiyajin

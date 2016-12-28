@@ -1,0 +1,9 @@
+extends ../templates/content
+
+block meta
+  - self.title = 'Página não encontrada :(';
+
+block inner-content
+  p Esta página não existe, nunca existiu, ou ainda vai existir.
+  p Ou isso é um sonho.
+  p: a.btn.btn-primary(href='/') Voltar para um lugar seguro

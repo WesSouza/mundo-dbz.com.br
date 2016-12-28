@@ -1,0 +1,152 @@
+extends wrapper
+
+block append head
+  meta(name='viewport', content='initial-scale=1.0, width=device-width, user-scalable=no')
+  link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:300italic,700italic,300,700')
+  link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Gruppo&text=MundoDBZ')
+  if self.env == 'development'
+    link(rel='stylesheet', href='/assets/styles/main.css?'+ self.version)
+  else
+    link(rel='stylesheet', href='/assets/styles/main.min.css?'+ self.version)
+  link(rel='shortcut icon', type='image/x-icon', href='/favicon.ico')
+  link(rel='apple-touch-icon', href='/images/apple-touch-icon-precomposed.png')
+
+block body
+  nav.main-nav(role='navigation', data-component='navbar')
+    .wrapper
+      h1.pull-left
+        a(href='/') Mundo#[span.mz DBZ]
+      .hidden-sm
+        ul.list-linear.pull-right
+          li: a(href='/personagens/', class= self.currentPage == 'personagens' ? 'active' : '') Personagens
+          li: a(href='/imagens/', class= self.currentPage == 'imagens' ? 'active' : '') Imagens
+          li: a(href='/jogos/', class= self.currentPage == 'jogos' ? 'active' : '') Jogos
+          li: a(href='/interativo/calcule-seu-ki.html', class= self.currentPage == 'interativo/calcule-seu-ki' ? 'active' : '') Meu Ki
+      .visible-sm
+        a.nav-dropdown.pull-right(href='#')
+          span
+            | Menu
+            svg.icon(viewbox='0 0 512 512')
+              path(d='M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3z')
+          span(hidden)
+            | Fechar
+            svg.icon(viewbox='0 0 512 512')
+              path(d='M256,33C132.3,33,32,133.3,32,257c0,123.7,100.3,224,224,224c123.7,0,224-100.3,224-224C480,133.3,379.7,33,256,33z M364.3,332.5c1.5,1.5,2.3,3.5,2.3,5.6c0,2.1-0.8,4.2-2.3,5.6l-21.6,21.7c-1.6,1.6-3.6,2.3-5.6,2.3c-2,0-4.1-0.8-5.6-2.3L256,289.8l-75.4,75.7c-1.5,1.6-3.6,2.3-5.6,2.3c-2,0-4.1-0.8-5.6-2.3l-21.6-21.7c-1.5-1.5-2.3-3.5-2.3-5.6c0-2.1,0.8-4.2,2.3-5.6l75.7-76l-75.9-75c-3.1-3.1-3.1-8.2,0-11.3l21.6-21.7c1.5-1.5,3.5-2.3,5.6-2.3c2.1,0,4.1,0.8,5.6,2.3l75.7,74.7l75.7-74.7c1.5-1.5,3.5-2.3,5.6-2.3c2.1,0,4.1,0.8,5.6,2.3l21.6,21.7c3.1,3.1,3.1,8.2,0,11.3l-75.9,75L364.3,332.5z')
+        ul.nav-ul-menu.list-stacked
+          li: a(href='/') Página inicial
+          li.nav-ul-category: h2 Personagens
+          li: a(href='/personagens/') Lista completa
+          li: a(href='/goku-vs-vegeta/') Goku vs. Vegeta
+          li: a(href='/vegeta/') Vegeta
+          li: a(href='/kuririn/') Kuririn
+          li: a(href='/goten/') Goten
+          li: a(href='/piccolo/') Piccolo
+          li: a(href='/trunks/') Trunks
+          li.nav-ul-category: h2 Akira Toriyama
+          li: a(href='/conteudo/biografia-akira-toriyama.html') Biografia do Criador
+          li: a(href='/conteudo/entrevista-akira-toriyama.html') Entrevista Exclusiva
+          li.nav-ul-category: h2 Imagens
+          li: a(href='/imagens/') Galeria de imagens
+          li: a(href='/imagens/papeis-de-parede/') Papéis de parede
+          li: a(href='/imagens/para-colorir/') Para colorir
+          li: a(href='/imagens/gifs-animados/') Gifs animados
+          li.nav-ul-category: h2 Diversão
+          li: a(href='/interativo/calcule-seu-ki.html') Calcule seu Ki
+          li: a(href='/jogos/') Jogos
+          li.nav-ul-category: h2 Resumos
+          li: a(href='/conteudo/historia-do-anime.html') História do Anime
+          li: a(href='/conteudo/dragon-ball.html') Dragon Ball
+          li: a(href='/conteudo/dragon-ball-z.html') Dragon Ball Z
+          li: a(href='/conteudo/dragon-ball-gt.html') Dragon Ball GT
+          li: a(href='/conteudo/filme-a-lenda-de-shenlong.html') Filme: A Lenda de Shenlong
+          li.nav-ul-category: h2 Informações
+          li: a(href='/conteudo/arvore-genealogica.html') Árvore Genealógica
+          li: a(href='/conteudo/censuras.html') Censuras
+          li: a(href='/conteudo/cronologia.html') Cronologia
+          li: a(href='/conteudo/curiosidades.html') Curiosidades
+          li: a(href='/conteudo/dicionario-z.html') Dicionário Z
+          li: a(href='/conteudo/dragoes.html') Dragões
+          li: a(href='/conteudo/esferas-do-dragao.html') Esferas do Dragão
+          li: a(href='/conteudo/falhas.html') Falhas
+          li: a(href='/conteudo/filmes.html') Filmes (resumos)
+          li: a(href='/conteudo/kaios.html') Kaios
+          li: a(href='/conteudo/lugares-e-objetos.html') Lugares e Objetos
+          li: a(href='/conteudo/niveis-saiyajin.html') Níveis Saiyajin
+          li: a(href='/conteudo/o-que-e-ki.html') O que é Ki
+          li: a(href='/conteudo/pedidos.html') Pedidos
+          li: a(href='/conteudo/planetas.html') Planetas
+          li: a(href='/conteudo/produtores.html') Produtores
+          li: a(href='/conteudo/racas.html') Raças
+          li: a(href='/conteudo/saiyajins.html') Saiyajins
+          li: a(href='/conteudo/tenkaichi-budokais.html') Tenkaichi Budokais
+
+  .main-content(role='main')
+    block content
+
+  footer.main-footer(role='contentinfo')
+    .wrapper
+      .grid
+        .width-1-1.width-md-1-3
+          h1 Principal
+          ul.list-stacked
+            li: a(href='/') Página inicial
+          h1 Personagens
+          ul.list-stacked
+            li: a(href='/personagens/') Lista completa
+            li: a(href='/goku-vs-vegeta/') Goku vs. Vegeta
+            li: a(href='/vegeta/') Vegeta
+            li: a(href='/kuririn/') Kuririn
+            li: a(href='/goten/') Goten
+            li: a(href='/piccolo/') Piccolo
+            li: a(href='/trunks/') Trunks
+          h1 Akira Toriyama
+          ul.list-stacked
+            li: a(href='/conteudo/biografia-akira-toriyama.html') Biografia do Criador
+            li: a(href='/conteudo/entrevista-akira-toriyama.html') Entrevista Exclusiva
+        .width-1-1.width-md-1-3
+          h1 Imagens
+          ul.list-stacked
+            li: a(href='/imagens/') Galeria de imagens
+            li: a(href='/imagens/papeis-de-parede/') Papéis de parede
+            li: a(href='/imagens/para-colorir/') Para colorir
+            li: a(href='/imagens/gifs-animados/') Gifs animados
+          h1 Diversão
+          ul.list-stacked
+            li: a(href='/interativo/calcule-seu-ki.html') Calcule seu Ki
+            li: a(href='/jogos/') Jogos
+          h1 Resumos
+          ul.list-stacked
+            li: a(href='/conteudo/historia-do-anime.html') História do Anime
+            li: a(href='/conteudo/dragon-ball.html') Dragon Ball
+            li: a(href='/conteudo/dragon-ball-z.html') Dragon Ball Z
+            li: a(href='/conteudo/dragon-ball-gt.html') Dragon Ball GT
+            li: a(href='/conteudo/filme-a-lenda-de-shenlong.html') Filme: A Lenda de Shenlong
+        .width-1-1.width-md-1-3
+          h1 Informações
+          ul.list-stacked
+            li: a(href='/conteudo/arvore-genealogica.html') Árvore Genealógica
+            li: a(href='/conteudo/censuras.html') Censuras
+            li: a(href='/conteudo/cronologia.html') Cronologia
+            li: a(href='/conteudo/curiosidades.html') Curiosidades
+            li: a(href='/conteudo/dicionario-z.html') Dicionário Z
+            li: a(href='/conteudo/dragoes.html') Dragões
+            li: a(href='/conteudo/esferas-do-dragao.html') Esferas do Dragão
+            li: a(href='/conteudo/falhas.html') Falhas
+            li: a(href='/conteudo/filmes.html') Filmes (resumos)
+            li: a(href='/conteudo/kaios.html') Kaios
+            li: a(href='/conteudo/lugares-e-objetos.html') Lugares e Objetos
+            li: a(href='/conteudo/niveis-saiyajin.html') Níveis Saiyajin
+            li: a(href='/conteudo/o-que-e-ki.html') O que é Ki
+            li: a(href='/conteudo/pedidos.html') Pedidos
+            li: a(href='/conteudo/planetas.html') Planetas
+            li: a(href='/conteudo/produtores.html') Produtores
+            li: a(href='/conteudo/racas.html') Raças
+            li: a(href='/conteudo/saiyajins.html') Saiyajins
+            li: a(href='/conteudo/tenkaichi-budokais.html') Tenkaichi Budokais
+      .copyright Copyright &copy; 2001-#{(new Date()).getFullYear()} &ndash; Todos os direitos reservados
+
+block append feet
+  if self.env == 'development'
+    script(src='/assets/scripts/main.js?'+ self.version, async)
+  else
+    script(src='/assets/scripts/main.min.js?'+ self.version, async)

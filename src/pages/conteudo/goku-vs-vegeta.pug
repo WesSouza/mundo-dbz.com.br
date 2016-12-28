@@ -1,0 +1,60 @@
+extends ../../templates/content
+
+block append meta
+  - self.title = 'Goku vs. Vegeta'
+  - self.description = 'Comparativo entre Goku e Vegeta, personagens principais de Dragon Ball.'
+
+block inner-content
+  .grid.grid-padded
+    .width-1-1.width-lg-1-4.text-center
+      img(src='#{self.cdn}/gal/paginas/bio_goku_001.jpg', alt='Son Goku')
+    .width-1-1.width-lg-3-4
+      .grid.grid-padded
+        .width-1-1.width-md-1-3.text-right-md: strong Nome
+        .width-1-1.width-md-2-3 Goku (de nascimento: Kakarotto)
+        .width-1-1.width-md-1-3.text-right-md: strong Idade
+        .width-1-1.width-md-2-3 52 anos
+        .width-1-1.width-md-1-3.text-right-md: strong Estado civil
+        .width-1-1.width-md-2-3 Casado
+        .width-1-1.width-md-1-3.text-right-md: strong Principal qualidade
+        .width-1-1.width-md-2-3 Bondade e inocência
+        .width-1-1.width-md-1-3.text-right-md: strong Principal defeito
+        .width-1-1.width-md-2-3 Irresponsabilidade
+        .width-1-1.width-md-1-3.text-right-md: strong Família
+        .width-1-1.width-md-2-3 Bardock (pai), Raditz e Tarlles (irmãos), Chi-Chi (esposa), Gohan e Goten (filhos) e Pan (neta)
+        .width-1-1.width-md-1-3.text-right-md: strong Batalha inesquecível
+        .width-1-1.width-md-2-3 Combate contra Piccolo no 23º Tenkaichi Boudokai
+        .width-1-1.width-md-1-3.text-right-md: strong Ataques mais fortes
+        .width-1-1.width-md-2-3 Kame hame ha e Genki Dama
+        .width-1-1.width-md-1-3.text-right-md: strong Comportamento em combates
+        .width-1-1.width-md-2-3 Superar seu inimigo e defender a Terra, custe o que custar
+        .width-1-1.width-md-1-3.text-right-md: strong Objetivos
+        .width-1-1.width-md-2-3 Lutar contra inimigos mais forte e superar seus poderes
+  p &nbsp;
+  .grid.grid-padded
+    .width-1-1.width-lg-1-4.text-center
+      img(src='#{self.cdn}/gal/paginas/bio_vegeta_002.jpg', alt='Vegeta')
+    .width-1-1.width-lg-3-4
+      .grid.grid-padded
+        .width-1-1.width-md-1-3.text-right-md: strong Nome
+        .width-1-1.width-md-2-3 Vegeta
+        .width-1-1.width-md-1-3.text-right-md: strong Idade
+        .width-1-1.width-md-2-3 57 anos
+        .width-1-1.width-md-1-3.text-right-md: strong Estado civil
+        .width-1-1.width-md-2-3 Casado
+        .width-1-1.width-md-1-3.text-right-md: strong Principal qualidade
+        .width-1-1.width-md-2-3 Perseverante
+        .width-1-1.width-md-1-3.text-right-md: strong Principal defeito
+        .width-1-1.width-md-2-3 Vingativo
+        .width-1-1.width-md-1-3.text-right-md: strong Família
+        .width-1-1.width-md-2-3 Rei Vegeta (pai), Bulma (esposa), Trunks e Bra (filhos)
+        .width-1-1.width-md-1-3.text-right-md: strong Batalha inesquecível
+        .width-1-1.width-md-2-3 Contra Goku logo que ele chegou na Terra pela primeira vez
+        .width-1-1.width-md-1-3.text-right-md: strong Ataques mais fortes
+        .width-1-1.width-md-2-3 Big Bang Atack e Final Flash
+        .width-1-1.width-md-1-3.text-right-md: strong Comportamento em combates
+        .width-1-1.width-md-2-3 Trata os inimigos como vermes mas sem duvidas é um mestre em combates
+        .width-1-1.width-md-1-3.text-right-md: strong Objetivos
+        .width-1-1.width-md-2-3 Superar a força de Kakarotto
+  p &nbsp;
+  p.text-center: a.btn-default(href='/imagens/') Confira centanas de imagens de Goku e Vegeta na galeria de imagens!
