@@ -9,56 +9,45 @@ const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
 const pug = require('gulp-pug');
 
+const paths = require('./src/config/paths');
+const pageLocals = require('./src/config/page-locals');
+
 const { basename, join, relative } = require('path');
-
-const { version } = require('./package.json');
-
-const paths = {
-  pages: join(__dirname, 'src/pages'),
-  scripts: join(__dirname, 'src/scripts'),
-  styles: join(__dirname, 'src/styles'),
-};
-
-const pageLocals = {
-  cdn: '/blobs',
-  env: process.env.NODE_ENV || 'development',
-  version: version,
-};
 
 gulp.task('pages', () =>
   gulp
-    .src(join(paths.pages, '**/*.pug'))
-    .pipe(data(file => ({ currentPage: basename(relative(paths.pages, file.path), '.pug') })))
+    .src(join(paths.pagesSrc, '**/*.pug'))
+    .pipe(data(file => ({ currentPage: basename(relative(paths.pagesSrc, file.path), '.pug') })))
     .pipe(pug({ self: true, locals: pageLocals }))
     .pipe(rename({ extname: '.html' }))
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest(paths.pagesDest))
 );
 
 gulp.task('scripts', () =>
   gulp
-    .src(join(paths.scripts, 'main.js'))
+    .src(join(paths.scriptsSrc, 'main.js'))
     .pipe(browserify())
-    .pipe(gulp.dest('./assets/scripts'))
+    .pipe(gulp.dest(paths.scriptsDest))
 );
 
 gulp.task('styles', () =>
   gulp
-    .src(join(paths.styles, 'main.css'))
+    .src(join(paths.stylesSrc, 'main.css'))
     .pipe(postcss([
       cssimport({ path: './src' }),
       cssnext({ browsers: ['last 2 chrome versions', 'last 2 ff versions'] }),
       cssmqpacker({ sort: true }),
     ]))
-    .pipe(gulp.dest('./assets/styles'))
+    .pipe(gulp.dest(paths.stylesDest))
     .pipe(cssnano())
     .pipe(rename('main.min.css'))
-    .pipe(gulp.dest('./assets/styles'))
+    .pipe(gulp.dest(paths.stylesDest))
 );
 
 gulp.task('watch', () => {
-  gulp.watch(join(paths.pages, '**/*.pug'), ['pages']);
-  gulp.watch(join(paths.scripts, '**/*.js'), ['scripts']);
-  gulp.watch(join(paths.styles, '**/*.css'), ['styles']);
+  gulp.watch(join(paths.pagesSrc, '**/*.pug'), ['pages']);
+  gulp.watch(join(paths.scriptsSrc, '**/*.js'), ['scripts']);
+  gulp.watch(join(paths.stylesSrc, '**/*.css'), ['styles']);
 });
 
 gulp.task('default', ['pages', 'scripts', 'styles']);
