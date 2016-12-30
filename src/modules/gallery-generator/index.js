@@ -72,13 +72,15 @@ const makeGallery = (path) => {
     }
   });
 
+  const href = `/imagens/${relativeDestPath}`.replace(/\/$/, '');
+
   const templateVars = {
-    self: pageLocals,
+    self: Object.assign({ currentPage: 'imagens', url: href + '/' }, pageLocals),
     breadcrumbs,
     name,
     dirs,
     files,
-    href: `/imagens/${relativeDestPath}`,
+    href,
   };
 
   fs.writeFileSync(join(galleryDest, relativeDestPath, 'index.html'), template(templateVars));

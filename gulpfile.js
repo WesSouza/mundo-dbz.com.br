@@ -14,10 +14,13 @@ const pageLocals = require('./src/config/page-locals');
 
 const { basename, join, relative } = require('path');
 
+const getCurrentPage = file => basename(relative(paths.pagesSrc, file.path), '.pug');
+const getURL = file => '/'+ (getCurrentPage(file) + '.html').replace('index.html', '');
+
 gulp.task('pages', () =>
   gulp
     .src(join(paths.pagesSrc, '**/*.pug'))
-    .pipe(data(file => ({ currentPage: basename(relative(paths.pagesSrc, file.path), '.pug') })))
+    .pipe(data(file => ({ currentPage: getCurrentPage(file), url: getURL(file) })))
     .pipe(pug({ self: true, locals: pageLocals }))
     .pipe(rename({ extname: '.html' }))
     .pipe(gulp.dest(paths.pagesDest))
