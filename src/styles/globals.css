@@ -63,6 +63,12 @@ hr {
   clear: both;
 }
 
+html.-cannot-scroll body,
+html.-has-nav-open body {
+  overflow: hidden;
+  height: 100%;
+}
+
 body .pull-left {
   float: left;
 }
@@ -163,6 +169,10 @@ body .align-middle {
 
 .icon {
   width: 16px;
+}
+
+.icon-huge {
+  width: 64px;
 }
 
 .padding {

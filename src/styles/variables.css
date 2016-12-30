@@ -37,6 +37,7 @@
   --lighter-pink: #D65CA7;
 
   --black: #000;
+  --black-20: rgba(0, 0, 0, 0.2);
   --black-80: rgba(0, 0, 0, 0.8);
   --darkest-gray: #424252;
   --darker-gray: #646474;
@@ -53,4 +54,8 @@
   --nav-height-lg: 100px;
   --nav-height-sm: 44px;
   --border-radius: 4px;
+
+  /* Z-indexes */
+  --z-index-nav: 10;
+  --z-index-modal: 50;
 }
