@@ -4,6 +4,14 @@ block meta
   - self.title = 'Página não encontrada :(';
 
 block inner-content
-  p Esta página não existe, nunca existiu, ou ainda vai existir.
-  p Ou isso é um sonho.
-  p: a.btn.btn-primary(href='/') Voltar para um lugar seguro
+  div(data-component='PageFinder')
+    div(data-ref='PageFinder-working')
+      p Esta página não existe mais, nunca existiu, ou ainda vai existir.
+      p Ou você clicou num link velho, deixa eu ver se eu consigo achar o que você quer...
+    div(data-ref='PageFinder-success', hidden)
+      p: strong ACHEI!
+      p Redirecionando...
+    div(data-ref='PageFinder-failed', hidden)
+      p Ou isso é um sonho.
+      p Ou alguma coisa quebrou.
+      p: a.btn.btn-primary(href='/') Voltar para a página inicial
