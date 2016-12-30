@@ -1,3 +1,4 @@
+const { exec } = require('child_process');
 const browserify = require('gulp-browserify');
 const cssimport = require('postcss-import');
 const cssmqpacker = require('css-mqpacker');
@@ -8,7 +9,6 @@ const gulp = require('gulp');
 const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
 const pug = require('gulp-pug');
-
 const paths = require('./src/config/paths');
 const pageLocals = require('./src/config/page-locals');
 
@@ -16,6 +16,14 @@ const { basename, join, relative } = require('path');
 
 const getCurrentPage = file => basename(relative(paths.pagesSrc, file.path), '.pug');
 const getURL = file => '/'+ (getCurrentPage(file) + '.html').replace('index.html', '');
+
+gulp.task('gallery', (cb) => {
+  exec('node src/modules/gallery-generator/index.js', (err, stdout, stderr) => {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+});
 
 gulp.task('pages', () =>
   gulp
@@ -48,11 +56,12 @@ gulp.task('styles', () =>
 );
 
 gulp.task('watch', () => {
+  gulp.watch(join(paths.templatesSrc, '**/*.pug'), ['gallery', 'pages']);
   gulp.watch(join(paths.pagesSrc, '**/*.pug'), ['pages']);
   gulp.watch(join(paths.scriptsSrc, '**/*.js'), ['scripts']);
   gulp.watch(join(paths.stylesSrc, '**/*.css'), ['styles']);
 });
 
-gulp.task('default', ['pages', 'scripts', 'styles']);
+gulp.task('default', ['gallery', 'pages', 'scripts', 'styles']);
 
 gulp.task('dev', ['default', 'watch']);
