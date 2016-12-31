@@ -30,6 +30,7 @@ const map = [
   { source: '/resumos/dragon_ball_z.html', location: '/conteudo/dragon_ball_z.html' },
   { source: '/resumos/filme_a_lenda_de_shenlong.html', location: '/conteudo/filme_a_lenda_de_shenlong.html' },
   { source: '/resumos/historia_do_anime.html', location: '/conteudo/historia_do_anime.html' },
+  { source: '/u/', location: '/' },
   { source: '/variados/arvore_genealogica.html', location: '/conteudo/arvore-genealogica.html' },
   { source: '/variados/biografia_akira_toriyama.html', location: '/conteudo/biografia-akira-toriyama.html' },
   { source: '/variados/censuras.html', location: '/conteudo/censuras.html' },
@@ -43,13 +44,13 @@ const map = [
   { source: '/variados/filmes.html', location: '/conteudo/filmes.html' },
   { source: '/variados/kaios.html', location: '/conteudo/kaios.html' },
   { source: '/variados/lugares_e_objetos.html', location: '/conteudo/lugares-e-objetos.html' },
-  { source: '/variados/niveis_sayajin.html', location: '/conteudo/niveis-sayajin.html' },
+  { source: '/variados/niveis_sayajin.html', location: '/conteudo/niveis-saiyajin.html' },
   { source: '/variados/o_que_e_ki.html', location: '/conteudo/o-que-e-ki.html' },
   { source: '/variados/pedidos.html', location: '/conteudo/pedidos.html' },
   { source: '/variados/planetas.html', location: '/conteudo/planetas.html' },
   { source: '/variados/produtores.html', location: '/conteudo/produtores.html' },
   { source: '/variados/racas.html', location: '/conteudo/racas.html' },
-  { source: '/variados/sayajins.html', location: '/conteudo/sayajins.html' },
+  { source: '/variados/sayajins.html', location: '/conteudo/saiyajins.html' },
   { source: '/variados/tekaichi_budokais.html', location: '/conteudo/tekaichi-budokais.html' },
 ];
 
