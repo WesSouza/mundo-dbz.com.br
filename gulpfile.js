@@ -12,9 +12,9 @@ const pug = require('gulp-pug');
 const paths = require('./src/config/paths');
 const pageLocals = require('./src/config/page-locals');
 
-const { basename, join, relative } = require('path');
+const { join, relative } = require('path');
 
-const getCurrentPage = file => basename(relative(paths.pagesSrc, file.path), '.pug');
+const getCurrentPage = file => relative(paths.pagesSrc, file.path).replace(/\.pug$/, '');
 const getURL = file => '/'+ (getCurrentPage(file) + '.html').replace('index.html', '');
 
 gulp.task('gallery', (cb) => {
